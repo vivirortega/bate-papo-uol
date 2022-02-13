@@ -21,7 +21,7 @@
 
         <article class="login-screen">
             <img src="./img/logo 1.png" class="chat-logo"/>
-            <input type="text" class="name-chat" data-identifier="enter-name" value="Digite seu nome">
+            <input type="text" class="name-chat" data-identifier="enter-name" placeholder="Digite seu nome" required>
             <button onclick="addUser()" data-identifier="start">Entrar</button>
         </article>
 
@@ -33,7 +33,7 @@
 
         <footer class="footer-bar hidden">
 
-            <input type="text" value="escreva aqui..." id="button-chat" />
+            <input type="text" id="button-chat" placeholder="Escreva aqui..."/>
             <ion-icon name="paper-plane-outline" class="button-icon" onclick="sendMessage()" data-identifier="send-message"></ion-icon>
         </footer>
 

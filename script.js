@@ -90,6 +90,7 @@ function sendMessage() {
         type: "message"
     }
     const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/messages", message);
+    document.querySelector("input").value = "";
     promise.then(reloadMessages);
     promise.catch(reloadPage); 
 }
@@ -97,6 +98,7 @@ function sendMessage() {
 function reloadMessages(){
     setInterval(loadMessages, 3000);
     console.log("loading...");
+    sendWithEnter()
 }
 
 function reloadPage(error) {
@@ -104,4 +106,14 @@ function reloadPage(error) {
     if (statusCode === 400) {
         window.location.reload();
     }
+}
+
+function sendWithEnter() {
+document.addEventListener("keypress", function(e) {
+    if(e.key === "Enter") {
+        console.log("apertou enter");
+        const button = document.querySelector("#button-chat");
+        button.click();
+    }
+});
 }
