@@ -28,6 +28,9 @@ function invalidName(error) {
 }
 
 function enterChat() {
+    document.querySelector(".login-screen").classList.add("hidden");
+    document.querySelector(".header-bar").classList.remove("hidden");
+    document.querySelector(".footer-bar").classList.remove("hidden");
     reloadMessages()
     setInterval(loadMessages, 3000);
 }

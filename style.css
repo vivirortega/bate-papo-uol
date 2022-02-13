@@ -67,7 +67,7 @@
     background-color: #FFFFFF;
 }
 
-.enter-chat {
+.login-screen {
     background-color: #FFFFFF;
     width: 100vw;
     height: 100vh;
@@ -104,4 +104,8 @@ button {
  height: 92px;
  z-index: 1;
  margin-bottom: 94px;
+}
+
+.hidden {
+    display: none;
 }

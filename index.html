@@ -13,16 +13,16 @@
     </head>
 
     <body>
-        <header class="header-bar">
+        <header class="header-bar hidden">
                 <img src="./img/logo 1.png" class="logo"/>
                 <img src="./img/Vector.png" class="icon-chats">
             </nav>
         </header>
 
-        <article class="enter-chat hidden">
+        <article class="login-screen">
             <img src="./img/logo 1.png" class="chat-logo"/>
-            <input type="text" class="name-chat" value="Digite seu nome">
-            <button onclick="addUser()">Entrar</button>
+            <input type="text" class="name-chat" data-identifier="enter-name" value="Digite seu nome">
+            <button onclick="addUser()" data-identifier="start">Entrar</button>
         </article>
 
         <main class="main">
@@ -31,7 +31,7 @@
             </article>
         </main>
 
-        <footer class="footer-bar">
+        <footer class="footer-bar hidden">
 
             <input type="text" value="escreva aqui..." id="button-chat" />
             <ion-icon name="paper-plane-outline" class="button-icon" onclick="sendMessage()" data-identifier="send-message"></ion-icon>
