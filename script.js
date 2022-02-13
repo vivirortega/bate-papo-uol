@@ -1,12 +1,9 @@
 let username = "";
 let user = {};
 
-
-addUser();
-
 //<- VALIDA O NOME DE USUÁRIO ->//
 function addUser() {
-username = prompt("Insira um nome para entrar no chat");
+username = document.querySelector("input").value;
 console.log(username);
 user = { name: username }
 const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/participants", user);
@@ -18,17 +15,21 @@ function validName (response) {
     let statusResponse = response.status;
      if (statusResponse === 200) {
      console.log("deu certo o nome")
-     loadMessages()
+     enterChat()
      } 
-    
-    }
+ }
 
 function invalidName(error) {
     let statusCode = error.response.status;
     if (statusCode === 400) {
         alert("Este nome já foi usado anteriormente, tente outro");
         addUser(); 
+    }
 }
+
+function enterChat() {
+    reloadMessages()
+    setInterval(loadMessages, 3000);
 }
 
 //<- BUSCA AS MENSAGENS DO SERVIDOR ->//
@@ -65,6 +66,7 @@ function messageOnChat(message) {
             </div>
             `
         }
+        
     })
 }
 
@@ -91,6 +93,7 @@ function sendMessage() {
 
 function reloadMessages(){
     setInterval(loadMessages, 3000);
+    console.log("loading...");
 }
 
 function reloadPage(error) {

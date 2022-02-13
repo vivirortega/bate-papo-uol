@@ -19,6 +19,12 @@
             </nav>
         </header>
 
+        <article class="enter-chat hidden">
+            <img src="./img/logo 1.png" class="chat-logo"/>
+            <input type="text" class="name-chat" value="Digite seu nome">
+            <button onclick="addUser()">Entrar</button>
+        </article>
+
         <main class="main">
             <article>
                 
@@ -28,7 +34,7 @@
         <footer class="footer-bar">
 
             <input type="text" value="escreva aqui..." id="button-chat" />
-            <ion-icon name="paper-plane-outline" class="button-icon" onclick="sendMessage()"></ion-icon>
+            <ion-icon name="paper-plane-outline" class="button-icon" onclick="sendMessage()" data-identifier="send-message"></ion-icon>
         </footer>
 
         

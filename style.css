@@ -66,3 +66,42 @@
 .messageForAll {
     background-color: #FFFFFF;
 }
+
+.enter-chat {
+    background-color: #FFFFFF;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    gap: 15px;
+}
+
+button {
+    background-color: #E7E7E7;
+    border-radius: 9px;
+    z-index: 1;
+    width: 109px;
+    height: 45px;
+    border: none;
+}
+
+.name-chat {
+    width: 261px;
+    height: 54px;
+    border-radius: 4px;
+    border: 1px solid #D7D7D7;
+    background-color: #FFFFFF;
+    color: black;
+    z-index: 1;
+    text-align: center;
+}
+
+.chat-logo {
+ width: 130px;
+ height: 92px;
+ z-index: 1;
+ margin-bottom: 94px;
+}
