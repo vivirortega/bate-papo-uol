@@ -31,7 +31,6 @@ function enterChat() {
     document.querySelector(".login-screen").classList.add("hidden");
     document.querySelector(".header-bar").classList.remove("hidden");
     document.querySelector(".footer-bar").classList.remove("hidden");
-    reloadMessages()
     setInterval(loadMessages, 3000);
 }
 
@@ -69,9 +68,14 @@ function messageOnChat(message) {
             </div>
             `
         }
-        
+        bodyMessage.innerHTML;
+        scroll()
     })
 }
+
+function scroll() {
+   window.scrollTo(000, document.body.scrollHeight);
+  }
 
 function errorMessage(error) {
     let statusCode = error.response.status;
@@ -108,6 +112,7 @@ function reloadPage(error) {
     }
 }
 
+//<- ENVIA MENSAGEM PELO ENTER ->//
 function sendWithEnter() {
 document.addEventListener("keypress", function(e) {
     if(e.key === "Enter") {
