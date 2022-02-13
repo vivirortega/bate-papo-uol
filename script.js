@@ -90,11 +90,11 @@ function sendMessage() {
     message = {
         from: username,
         to: "Todos",
-        text: document.querySelector("input").value,
+        text: document.querySelector("#button-chat").value,
         type: "message"
     }
     const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/messages", message);
-    document.querySelector("input").value = "";
+    document.querySelector("#button-chat").value = "";
     promise.then(reloadMessages);
     promise.catch(reloadPage); 
 }
