@@ -60,6 +60,7 @@
     color: black;  
     font-family: 'Roboto', sans-serif;
     word-break: break-all;
+    gap: 2px;
     
 }
 
@@ -117,4 +118,9 @@ button {
 
 .bold {
     font-weight: 700;
+}
+
+.status {
+    background-color:#DCDCDC;
+    ;
 }

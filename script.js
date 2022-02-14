@@ -126,6 +126,7 @@ document.addEventListener("keypress", function(e) {
 });
 }
 
+//<- VERIFICA SE O USUÁRIO AINDA ESTÁ LOGADO //->
 function verifyUserOnline(){
     setInterval(function(){
         const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/status", user);
@@ -137,6 +138,5 @@ function verifyUserOnline(){
 function errorUserOffline(error) {
     if (error.response.status === 400);
      console.log("erro no usuário");
-
-
+      window.location.reload();
 }
