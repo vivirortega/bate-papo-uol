@@ -56,7 +56,6 @@
 .message {
     border-radius: 2px;
     padding: 10px;
-    z-index: 0;
     margin-bottom: 6px; 
     color: black;  
     font-family: 'Roboto', sans-serif;
@@ -70,6 +69,7 @@
 
 .messageForAll {
     background-color: #FFFFFF;
+    
 }
 
 .login-screen {
@@ -115,6 +115,6 @@ button {
     display: none;
 }
 
-b {
+.bold {
     font-weight: 700;
 }

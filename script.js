@@ -53,20 +53,20 @@ function messageOnChat(message) {
         if (item.type === 'message') {
             bodyMessage.innerHTML += `
             <div class="messageForAll message" data-identifier="message">
-                <span>(${item.time})  </span> <b>${item.from}</b> para <b>${item.to}</b>: ${item.text}
+                <span>(${item.time})  </span> <b class="bold">${item.from}</b> para <b class="bold">${item.to}</b>: ${item.text}
             </div>           
             `
         } else if (item.type === 'private_message') {
 
             bodyMessage.innerHTML += `
             <div class="messagePrivate message" data-identifier="message">
-            <span>(${item.time})  </span> <b>${item.from}</b> para <b>${item.to}</b>: ${item.text}
+            <span>(${item.time})  </span> <b class="bold">${item.from}</b> para <b class="bold">${item.to}</b>: ${item.text}
             </div>
             `
         } else if (item.type === 'status') {
             bodyMessage.innerHTML += `
             <div class="status message" data-identifier="message">
-            <span>(${item.time})  </span> <b>${item.from}</b>  ${item.text}
+            <span>(${item.time})  </span> <b class="bold">${item.from}</b>  ${item.text}
             </div>
             `
         }
