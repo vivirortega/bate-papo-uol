@@ -103,7 +103,7 @@ function sendMessage() {
 }
 
 function reloadMessages(){
-    setInterval(loadMessages, 5000);
+    setInterval(loadMessages, 3000);
     console.log("loading...");
     sendWithEnter();    
 }
