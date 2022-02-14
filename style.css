@@ -59,6 +59,8 @@
     z-index: 0;
     margin-bottom: 3px; 
     color: black;  
+    font-family: 'Roboto', sans-serif;
+    word-break: break-all;
 }
 
 .messagePrivate {
@@ -110,4 +112,8 @@ button {
 
 .hidden {
     display: none;
+}
+
+b {
+    font-weight: bold;
 }

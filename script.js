@@ -3,48 +3,48 @@ let user = {};
 
 //<- VALIDA O NOME DE USUÁRIO ->//
 function addUser() {
-username = document.querySelector("input").value;
-console.log(username);
-user = { name: username }
-const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/participants", user);
+    username = document.querySelector("input").value;
+    console.log(username);
+    user = { name: username }
+    const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/participants", user);
 promise.then(validName);
 promise.catch(invalidName);
 };
 
 function validName (response) {
     let statusResponse = response.status;
-     if (statusResponse === 200) {
-     console.log("deu certo o nome")
-     enterChat()
+      if (statusResponse === 200) {
+       console.log("deu certo o nome")
+        enterChat()
      } 
  }
 
 function invalidName(error) {
-    let statusCode = error.response.status;
-    if (statusCode === 400) {
+     let statusCode = error.response.status;
+     if (statusCode === 400) {
         alert("Este nome já foi usado anteriormente, tente outro");
-        addUser(); 
+        window.location.reload();
     }
 }
 
 function enterChat() {
-    document.querySelector(".login-screen").classList.add("hidden");
-    document.querySelector(".header-bar").classList.remove("hidden");
-    document.querySelector(".footer-bar").classList.remove("hidden");
-    setInterval(loadMessages, 3000);
+     document.querySelector(".login-screen").classList.add("hidden");
+     document.querySelector(".header-bar").classList.remove("hidden");
+     document.querySelector(".footer-bar").classList.remove("hidden");
+     setInterval(loadMessages, 3000);
 }
 
 //<- BUSCA AS MENSAGENS DO SERVIDOR ->//
 function loadMessages() {
-const promise = axios.get("https://mock-api.driven.com.br/api/v4/uol/messages");
+ const promise = axios.get("https://mock-api.driven.com.br/api/v4/uol/messages");
 promise.then(messageOnChat)
 promise.catch(errorMessage)
 };
 
 function messageOnChat(message) {
-    let dataMessage = message.data;
-    let bodyMessage = document.querySelector("main");
-    console.log(dataMessage);
+     let dataMessage = message.data;
+     let bodyMessage = document.querySelector("main");
+     bodyMessage.innerHTML = "";
 
     dataMessage.forEach(item => {
 
@@ -68,6 +68,7 @@ function messageOnChat(message) {
             </div>
             `
         }
+
         bodyMessage.innerHTML;
         scroll()
     })
@@ -84,32 +85,32 @@ function errorMessage(error) {
     }
 }
 
-
 //<- ENVIA MENSAGEM PRO SERVIDOR ->//
 function sendMessage() {
-    message = {
+     message = {
         from: username,
         to: "Todos",
         text: document.querySelector("#button-chat").value,
         type: "message"
-    }
-    const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/messages", message);
-    document.querySelector("#button-chat").value = "";
-    promise.then(reloadMessages);
-    promise.catch(reloadPage); 
+     }
+     const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/messages", message);
+     document.querySelector("#button-chat").value = "";
+     promise.then(reloadMessages);
+     promise.catch(reloadPage); 
+     
 }
 
 function reloadMessages(){
-    setInterval(loadMessages, 3000);
+    setInterval(loadMessages, 5000);
     console.log("loading...");
-    sendWithEnter()
+    sendWithEnter();    
 }
 
 function reloadPage(error) {
-    let statusCode = error.response.status;
-    if (statusCode === 400) {
-        window.location.reload();
-    }
+     let statusCode = error.response.status;
+     if (statusCode === 400) {
+         window.location.reload();
+     }
 }
 
 //<- ENVIA MENSAGEM PELO ENTER ->//
@@ -121,4 +122,19 @@ document.addEventListener("keypress", function(e) {
         button.click();
     }
 });
+}
+
+function verifyUserOnline(){
+    setInterval(function(){
+        const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/status", user);
+        console.log("Verificando se o user está online...")
+        promise.catch(errorUserOffline);
+        }, 5000);
+}
+
+function errorUserOffline(error) {
+    if (error.response.status === 400);
+     console.log("erro no usuário");
+
+
 }
