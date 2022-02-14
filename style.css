@@ -57,10 +57,11 @@
     border-radius: 2px;
     padding: 10px;
     z-index: 0;
-    margin-bottom: 3px; 
+    margin-bottom: 6px; 
     color: black;  
     font-family: 'Roboto', sans-serif;
     word-break: break-all;
+    
 }
 
 .messagePrivate {
@@ -115,5 +116,5 @@ button {
 }
 
 b {
-    font-weight: bold;
+    font-weight: 700;
 }

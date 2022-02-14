@@ -31,7 +31,9 @@ function enterChat() {
      document.querySelector(".login-screen").classList.add("hidden");
      document.querySelector(".header-bar").classList.remove("hidden");
      document.querySelector(".footer-bar").classList.remove("hidden");
-     setInterval(loadMessages, 3000);
+     loadMessages();
+     reloadMessages();
+     verifyUserOnline();
 }
 
 //<- BUSCA AS MENSAGENS DO SERVIDOR ->//
