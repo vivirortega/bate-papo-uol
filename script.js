@@ -122,6 +122,7 @@ document.addEventListener("keypress", function(e) {
         console.log("apertou enter");
         const button = document.querySelector("#button-chat");
         button.click();
+        sendMessage()
     }
 });
 }
